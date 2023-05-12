@@ -53,7 +53,9 @@ export function getApplicationState(
 
     if (missingFields.length > 0) {
       return `${Math.round(
-        (missingFields.length / requiredFields.length) * 100
+        ((requiredFields.length - missingFields.length) /
+          requiredFields.length) *
+          100
       )}% Data Captured`;
     }
 
