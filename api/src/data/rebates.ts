@@ -1,0 +1,160 @@
+import { Rebate } from "../../../types/data";
+import { subDays } from "date-fns";
+
+export default [
+  {
+    id: "REB-123456",
+    name: "Maine - Heat Pump",
+    effectiveDate: subDays(new Date(), 500),
+    fieldMap: [
+      {
+        displayName: "Installed by approved vendor",
+        type: "checkbox",
+        formField: "checkbox-1",
+        projectField: "project.projectInfo.approvedVendor",
+        required: true,
+      },
+      {
+        displayName: "Will be used throughout heating season",
+        type: "checkbox",
+        formField: "checkbox-2",
+        projectField: "project.projectInfo.heatingSeason",
+        required: true,
+      },
+      {
+        displayName: "Within six months of installation",
+        type: "checkbox",
+        formField: "checkbox-3",
+        projectField: "project.projectInfo.sixMonths",
+        required: true,
+      },
+      {
+        displayName: "Installed according to checklist",
+        type: "checkbox",
+        formField: "checkbox-4",
+        projectField: "project.projectInfo.installedChecklist",
+        required: true,
+      },
+      {
+        displayName: "Owners manual supplied",
+        type: "checkbox",
+        formField: "checkbox-5",
+        projectField: "project.projectInfo.ownersManual",
+        required: true,
+      },
+      {
+        displayName: "Heat pump user tips supplied",
+        type: "checkbox",
+        formField: "checkbox-6",
+        projectField: "project.projectInfo.userTips",
+        required: true,
+      },
+      {
+        displayName: "Instructed homeowner on usage",
+        type: "checkbox",
+        formField: "checkbox-7",
+        projectField: "project.projectInfo.homeownerTaught",
+        required: true,
+      },
+      {
+        displayName: "Understands increased electric costs",
+        type: "checkbox",
+        formField: "checkbox-8",
+        projectField: "project.projectInfo.increasedCosts",
+        required: true,
+      },
+      {
+        displayName: "Is owned by a business",
+        type: "checkbox",
+        formField: "checkbox-9",
+        projectField: "project.projectInfo.businessOwned",
+        required: true,
+      },
+      {
+        displayName: "Customer Name",
+        type: "text",
+        formField: "customer-name",
+        required: true,
+        projectField: "project.customer.name.given",
+      },
+      {
+        displayName: "Customer Street Address",
+        type: "text",
+        formField: "customer-street-address",
+        required: true,
+        projectField: "project.address.street",
+      },
+      {
+        displayName: "Customer City/Town",
+        type: "text",
+        formField: "customer-locality",
+        required: true,
+        projectField: "project.address.locality",
+      },
+      {
+        displayName: "Customer State",
+        type: "text",
+        formField: "customer-province",
+        required: true,
+        projectField: "project.address.province",
+      },
+      {
+        displayName: "Customer Postal Code",
+        type: "text",
+        formField: "customer-postal-code",
+        required: true,
+        projectField: "project.address.postalCode",
+      },
+      {
+        displayName: "Customer Email",
+        type: "text",
+        formField: "customer-email",
+        required: true,
+        projectField: "project.customer.email",
+      },
+      {
+        displayName: "Customer Phone",
+        type: "text",
+        formField: "customer-phone",
+        required: true,
+        projectField: "project.customer.phone",
+      },
+    ],
+    requirements: [
+      { type: "location", property: "address.locality", value: "Freeport" },
+    ],
+  },
+  {
+    id: "REB-100000",
+    name: "Maine - Water Heater",
+    effectiveDate: subDays(new Date(), 500),
+    updatedAt: subDays(new Date(), 2),
+    requirements: [
+      { type: "location", property: "address.province", value: "ME" },
+    ],
+  },
+  {
+    id: "REB-999999",
+    name: "Federal - Heat Pump",
+    effectiveDate: subDays(new Date(), 700),
+    endingDate: subDays(new Date(), 500),
+  },
+  {
+    id: "REB-111111",
+    name: "California - Heat Pump",
+    effectiveDate: subDays(new Date(), 700),
+    endingDate: subDays(new Date(), 500),
+    requirements: [
+      { type: "location", property: "address.province", value: "CA" },
+    ],
+  },
+  {
+    id: "REB-321123",
+    name: "Washington - Heat Pump",
+    effectiveDate: subDays(new Date(), 700),
+    endingDate: subDays(new Date(), 500),
+    requirements: [
+      { type: "location", property: "address.province", value: "WA" },
+    ],
+  },
+] as Rebate[];

@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "date-fns": "^2.30.0",
+    "express": "^4.18.2",
+    "typescript": "^5.0.4",
+    "uuid": "^9.0.0"
+  },
+  "name": "services",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc --project ./tsconfig.json",
+    "start": "node build/index.js"
+  },
+  "author": "Dustin Brownell",
+  "license": "UNLICENSED",
+  "description": "",
+  "devDependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.1.2",
+    "@types/uuid": "^9.0.1"
+  }
+}
